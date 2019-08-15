@@ -11,15 +11,17 @@ export class AppComponent {
   title = 'MountProject';
   mountainData: Data[] = [];
   tableHead: string[] = [];
+
   constructor(private MountainsService: MountainsService) { }
+
   ngOnInit() {
     this.MountainsService.getAll().subscribe(
-      incomingData => this.mountainData = incomingData,
+      incomingData => {
+        this.mountainData = incomingData,
+          console.log(this.mountainData)
+      },
       err => console.error(err)
     )
   }
-  createTableHead() {
-    this.tableHead = Object.keys(this.mountainData[0]);
-    console.log(this.tableHead)
-  }
+  
 }

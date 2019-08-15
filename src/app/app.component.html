@@ -1,16 +1,27 @@
 <div class="container-fluid">
   <h1>Mountains</h1>
-  <p>{{createTableHead()}}</p>
   <div class="row">
     <div class="col-12">
       <table class="table table-striped">
         <thead>
           <tr>
-            <th *ngFor="let i of tableHead">{{i}}</th>
+            <th>Mountain</th>
+            <th>Range</th>
+            <th>Country</th>
+            <th>Height (m)</th>
+            <th>First Ascent</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-
+          <tr *ngFor="let i of mountainData">
+            <td>{{i.Mountain}}</td>
+            <td>{{i.Range}}</td>
+            <td>{{i.Country}}</td>
+            <td>{{i.Height}}</td>
+            <td>{{i.FirstAscent}}</td>
+            <td></td>
+          </tr>
         </tbody>
       </table>
     </div>

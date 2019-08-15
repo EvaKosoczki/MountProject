@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class MountainsService {
-  jsonURL: string = 'http://localhost:3000/Alps'
+  jsonURL: string = 'http://localhost:3210/'
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Data[]> {

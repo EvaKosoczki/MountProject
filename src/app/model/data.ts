@@ -1,12 +1,12 @@
 export class Data {
-  ID: number;
-  Mountain: string;
-  Height: number;
-  Drop: number;
-  Coordinates: string;
-  Range: string;
-  SOIUSAcodes: string;
-  Region: string;
-  Country: string;
-  FirstAscent: string;
+  ID: number = 0;
+  Mountain: string = '';
+  Height: number = 0;
+  Drop: number = 0;
+  Coordinates: string = '';
+  Range: string = '';
+  SOIUSAcodes: string = '';
+  Region: string = '';
+  Country: string = '';
+  FirstAscent: string = '';
 }
