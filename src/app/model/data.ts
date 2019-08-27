@@ -1,5 +1,5 @@
 export class Data {
-  ID: number = 0;
+  id: number = 0;
   Mountain: string = '';
   Height: number = 0;
   Drop: number = 0;

@@ -8,6 +8,7 @@ import { NavComponent } from './pages/nav/nav.component';
 import { MountainDataComponent } from './pages/mountain-data/mountain-data.component';
 import { CardsComponent } from './pages/cards/cards.component';
 import { IndexComponent } from './pages/index/index.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 const appRoutes: Routes = [
   {
@@ -17,6 +18,10 @@ const appRoutes: Routes = [
   {
     path: 'cards',
     component: CardsComponent,
+  },
+  {
+    path: 'details/:id',
+    component: DetailsComponent,
   },
   {
     path: '**',
@@ -29,7 +34,8 @@ const appRoutes: Routes = [
     NavComponent,
     MountainDataComponent,
     CardsComponent,
-    IndexComponent
+    IndexComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

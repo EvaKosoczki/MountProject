@@ -13,4 +13,7 @@ export class MountainsService {
   getAll(): Observable<Data[]> {
     return this.http.get<Data[]>(this.jsonURL)
   }
+  getOne(id): Observable<Data> {
+    return this.http.get<Data>(`${this.jsonURL}/${id}`)
+  }
 }
