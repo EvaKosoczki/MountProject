@@ -3,9 +3,9 @@ const db = require('./db')
 
 module.exports = class getHandler {
   constructor(req, res) {
-    const dbSample = new db();
+    const dbSample = new db(req.url);
     dbSample.readjsonfile().then(
-      data => res.end(data),
+      data => res.end(JSON.stringify(data)),
       err => res.end(err)
     )
 
