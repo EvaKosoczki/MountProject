@@ -32,6 +32,13 @@
             <th>First Ascent</th>
             <td>{{OneMountain.FirstAscent}}</td>
           </tr>
+          <tr>
+            <td>
+              <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+              </agm-map>
+            </td>
+          </tr>
 
         </tbody>
       </div>
