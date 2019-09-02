@@ -14,6 +14,7 @@ export class DetailsComponent implements OnInit {
   lat: string;
   lng: string;
   splittedCoord: string[];
+  FirstAscent: any
 
   constructor(private mountainsService: MountainsService, private ar: ActivatedRoute) {
     this.ar.params.forEach(params => {
@@ -24,8 +25,6 @@ export class DetailsComponent implements OnInit {
           this.splittedCoord = this.OneMountain.Coordinates.split(" ");
           this.lat = this.splittedCoord[3].slice(0, 9);
           this.lng = this.splittedCoord[4].slice(0, 7);
-          console.log(this.lat)
-          console.log(this.lng)
         },
         err => { console.error(JSON.stringify(err)) }
       )
@@ -33,6 +32,10 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.mountainsService.getAllFa().subscribe(
+      data => this.FirstAscent = data,
+      err => console.error(err))
+
   }
 
 }

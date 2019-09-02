@@ -12,13 +12,15 @@ router.get('/:entity/:id', function (req, res, next) {
   )
 });
 
-router.get('/:entity', function (req, res, next) {
+router.get('/:entity', async (req, res, next) => {
   let dbSmp = new db.databaseHandler(req.params.entity)
-
-  dbSmp.readjsonfile().then(
-    data => res.json(data),
-    err => res.json(err)
-  )
-});
-
+  data = [];
+  try {
+    data = await dbSmp.readjsonfile()
+  }
+  catch (err) {
+    return res.send(err);
+  }
+  res.send()
+})
 module.exports = router;

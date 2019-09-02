@@ -3,11 +3,9 @@ const fs = require('fs');
 
 class databaseHandler {
   constructor(entity) {
-    //this.slicedString = url.split('/');
-    //this.id = this.slicedString[2] || 0;
     this.jsonFolderPath = path.join(__dirname, '../../..', 'json');
     this.jsonPath = path.join(this.jsonFolderPath, `${entity}.json`)
-    console.log(this.jsonPath)
+    this.jsonPathFa = path.join(this.jsonFolderPath, 'firstAscent.json')
   }
   readjsonfile(id = 0) {
     return new Promise((resolve, reject) => {
@@ -23,6 +21,16 @@ class databaseHandler {
           )[0] || {}
           resolve(this.oneMountain)
         }
+      })
+    })
+  };
+  readFirstAscent() {
+    return new Promise((resolve, reject) => {
+      fs.readFile(this.jsonPathFa, 'utf8', (err, data) => {
+        if (err) {
+          return reject(JSON.stringify(err))
+        }
+
       })
     })
   }
