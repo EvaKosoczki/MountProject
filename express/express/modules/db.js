@@ -25,8 +25,26 @@ class databaseHandler {
         }
       })
     })
+  };
+
+  readfirstAscentFile(id = 0) {
+    return new Promise((resolve, reject) => {
+      fs.readFile(this.jsonPath, 'utf8', (err, data) => {
+        if (err) {
+          return reject(JSON.stringify(err))
+        } else {
+          this.firstAscentData = JSON.parse(data).filter((item) => {
+            item.id = id
+          })[0] || {}
+          resolve(this.firstAscentData)
+        }
+      })
+    })
   }
 }
+
+
+
 module.exports = {
   databaseHandler: databaseHandler
 }
