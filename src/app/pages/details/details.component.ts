@@ -23,9 +23,7 @@ export class DetailsComponent implements OnInit {
           this.OneMountain = datas;
           this.splittedCoord = this.OneMountain.Coordinates.split(" ");
           this.lat = this.splittedCoord[3].slice(0, 9);
-          this.lng = this.splittedCoord[4].slice(0, 7);
-          console.log(this.lat)
-          console.log(this.lng)
+          this.lng = this.splittedCoord[4].slice(0, 7)
         },
         err => { console.error(JSON.stringify(err)) }
       )

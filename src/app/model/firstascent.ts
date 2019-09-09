@@ -1,5 +1,5 @@
 export class Firstascent {
-  Id: Number,
+  Id: Number;
   Date: string;
   Peak: string;
   Height: number;
@@ -7,5 +7,4 @@ export class Firstascent {
   Climbers: string;
   Ref: string;
   FIELD8: string;
-
 }
