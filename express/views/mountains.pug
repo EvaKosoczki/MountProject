@@ -1,4 +1,18 @@
 extends layout
 
 block content
-  h1 Hello
+  h1 Mountains
+  html
+  body
+    table.table.table-striped
+      thead
+        tr
+          th Mountain
+          th Country
+          th Height (m)
+      tbody
+        each val in datas
+          tr
+            td= val.Mountain
+            td= val.Country
+            td= val.Height
