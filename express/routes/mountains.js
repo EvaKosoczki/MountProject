@@ -11,4 +11,19 @@ router.get('/', async (req, res, next) => {
   });
 });
 
+router.get('/details/:id', async (req, res, next) => {
+  let oneData = await MountDBSmp.getOneMountains(req.params.id)
+  let oneFA
+  try {
+    oneFA = await MountDBSmp.getOneFA(oneData[0].Mountain)
+  } catch (err) {
+    console.log(err)
+  }
+  res.render('details', {
+    oneData: oneData[0],
+    oneFA: oneFA[0]
+  })
+})
+
+
 module.exports = router;
