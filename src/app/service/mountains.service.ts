@@ -7,13 +7,13 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class MountainsService {
-  jsonURL: string = 'http://localhost:3210/api/alps'
+  dataURL: string = 'http://localhost:3000/api'
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Data[]> {
-    return this.http.get<Data[]>(this.jsonURL)
+    return this.http.get<Data[]>(this.dataURL)
   }
-  getOne(id): Observable<Data> {
-    return this.http.get<Data>(`${this.jsonURL}/${id}`)
+  getOne(id: number): Observable<any> {
+    return this.http.get<any>(`${this.dataURL}/${id}`)
   }
 }

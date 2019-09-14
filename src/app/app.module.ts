@@ -7,22 +7,28 @@ import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
 import { NavComponent } from './pages/nav/nav.component';
 import { MountainDataComponent } from './pages/mountain-data/mountain-data.component';
-import { CardsComponent } from './pages/cards/cards.component';
 import { IndexComponent } from './pages/index/index.component';
 import { DetailsComponent } from './pages/details/details.component';
+import { MypageComponent } from './pages/mypage/mypage.component';
+import { ProfilComponent } from './pages/profil/profil.component';
 
 const appRoutes: Routes = [
   {
     path: 'mountain',
     component: MountainDataComponent,
   },
-  {
-    path: 'cards',
-    component: CardsComponent,
-  },
+
   {
     path: 'details/:id',
     component: DetailsComponent,
+  },
+  {
+    path: 'mypage',
+    component: MypageComponent,
+  },
+  {
+    path: 'mypage/profil/:id',
+    component: ProfilComponent,
   },
   {
     path: '**',
@@ -34,9 +40,10 @@ const appRoutes: Routes = [
     AppComponent,
     NavComponent,
     MountainDataComponent,
-    CardsComponent,
     IndexComponent,
-    DetailsComponent
+    DetailsComponent,
+    MypageComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
