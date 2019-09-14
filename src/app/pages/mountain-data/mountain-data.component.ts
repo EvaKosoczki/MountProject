@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Data } from './../../model/data';
 import { MountainsService } from './../../service/mountains.service'
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-mountain-data',
@@ -9,18 +10,12 @@ import { MountainsService } from './../../service/mountains.service'
 })
 export class MountainDataComponent implements OnInit {
   title = 'MountProject';
-  mountainData: Data[] = [];
-  tableHead: string[] = [];
+  mountainData$: Observable<any> = this.MountainsService.getAll()
+  searchText: string = '';
 
   constructor(private MountainsService: MountainsService) { }
 
   ngOnInit() {
-    this.MountainsService.getAll().subscribe(
-      incomingData => {
-        this.mountainData = incomingData,
-          console.log(this.mountainData)
-      },
-      err => console.error(err)
-    )
+
   }
 }

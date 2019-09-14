@@ -1,21 +1,25 @@
 <div class="container-fluid">
   <h1>Mountains</h1>
   <div class="row">
+    <div class="col-5 offset-7">
+      <input type="text" [(ngModel)]="searchText">
+    </div>
+  </div>
+  <div class="row">
     <div class="col-12">
       <table class="table table-striped">
         <thead>
           <tr>
             <th>Mountain</th>
-            <th>Range</th>
             <th>Height (m)</th>
             <th></th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let i of mountainData">
+          <tr
+            *ngFor="let i of mountainData$ | async | filter : searchText | sorter7">
             <td>{{i.Mountain}}</td>
-            <td>{{i.Range}}</td>
             <td>{{i.Height}}</td>
             <td><button class="btn btn-success"
                 routerLink="/details/{{i.id}}">Details</button></td>

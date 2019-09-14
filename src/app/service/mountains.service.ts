@@ -12,7 +12,7 @@ export class MountainsService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Data[]> {
-    return this.http.get<Data[]>(this.dataURL)
+    return this.http.get<Data[]>(`${this.dataURL}/mount`)
   };
   getOneUser(id: number): Observable<User> {
     return this.http.get<User>(`${this.dataURL}/${id}`)

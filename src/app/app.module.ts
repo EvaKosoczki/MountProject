@@ -14,6 +14,8 @@ import { MypageComponent } from './pages/mypage/mypage.component';
 import { ProfilComponent } from './pages/profil/profil.component';
 import { EditprofilComponent } from './pages/editprofil/editprofil.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
+import { FilterPipe } from './pipe/filter.pipe';
+import { Sorter7Pipe } from './pipe/sorter7.pipe';
 
 const appRoutes: Routes = [
   {
@@ -56,7 +58,9 @@ const appRoutes: Routes = [
     MypageComponent,
     ProfilComponent,
     EditprofilComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    FilterPipe,
+    Sorter7Pipe
   ],
   imports: [
     FormsModule,
