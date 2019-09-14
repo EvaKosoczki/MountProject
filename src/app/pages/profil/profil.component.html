@@ -1,8 +1,25 @@
-<ul class="list-group list-group-flush">
-  <li class="list-group-item">{{oneData[0].firstname}}</li>
-  <li class="list-group-item">{{oneData[0].lastname}}</li>
-  <li class="list-group-item">{{oneData[0].email}}</li>
-  <li class="list-group-item">{{oneData[0].age}}</li>
-  <li class="list-group-item">{{oneData[0].country}}</li>
-  <li class="list-group-item">{{oneData[0].city}}</li>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Profil</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-5">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">First Name: {{oneData[0].firstname}}</li>
+        <li class="list-group-item">Last Name: {{oneData[0].lastname}}</li>
+        <li class="list-group-item">Email: {{oneData[0].email}}</li>
+        <li class="list-group-item">Age: {{oneData[0].age}}</li>
+        <li class="list-group-item">Country: {{oneData[0].country}}</li>
+        <li class="list-group-item">City: {{oneData[0].city}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-5">
+      <button class="btn btn-primary"
+        routerLink="/mypage/profil/{{oneData[0].id}}/edit">Edit</button>
+    </div>
+  </div>
+</div>

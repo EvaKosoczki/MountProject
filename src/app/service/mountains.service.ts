@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Data } from '../model/data';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http'
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,10 @@ export class MountainsService {
   getAll(): Observable<Data[]> {
     return this.http.get<Data[]>(this.dataURL)
   }
-  getOne(id: number): Observable<any> {
-    return this.http.get<any>(`${this.dataURL}/${id}`)
+  getOneUser(id: number): Observable<User> {
+    return this.http.get<User>(`${this.dataURL}/${id}`)
+  }
+  editUser(user: User): Observable<User> {
+    return this.http.post<User>(`${this.dataURL}/${user.id}`, user)
   }
 }

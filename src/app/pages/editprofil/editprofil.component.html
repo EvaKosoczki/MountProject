@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <h1>
+        Edit your profile
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 offset-3">
+      <form (submit)="onSubmit($event)">
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input type="text" class="form-control" id="firstname"
+            name="firstname" [(ngModel)]="data[0].firstname">
+        </div>
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input type="text" class="form-control" id="lastname" name="lastname"
+            [(ngModel)]="data[0].lastname">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email"
+            [(ngModel)]="data[0].email">
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" name="age"
+            [(ngModel)]="data[0].age">
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" class="form-control" id="country" name="country"
+            [(ngModel)]="data[0].country">
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" class="form-control" id="city" name="city"
+            [(ngModel)]="data[0].city">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-warning"
+          routerLink="/mypage/profil/{{data[0].id}}">Back</button>
+      </form>
+    </div>
+  </div>
+</div>
+{{data[0].age}}

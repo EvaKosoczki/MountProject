@@ -16,7 +16,7 @@ export class DetailsComponent implements OnInit {
   splittedCoord: string[];
 
   constructor(private mountainsService: MountainsService, private ar: ActivatedRoute) {
-    this.ar.params.forEach(params => {
+    /*this.ar.params.forEach(params => {
       this.MountainId = params.id;
       this.mountainsService.getOne(this.MountainId).subscribe(
         datas => {
@@ -27,7 +27,7 @@ export class DetailsComponent implements OnInit {
         },
         err => { console.error(JSON.stringify(err)) }
       )
-    })
+    })*/
   }
 
   ngOnInit() {
