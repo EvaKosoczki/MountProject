@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-6 offset-3">
       <h1>
-        Edit your profile
+        Registration
       </h1>
     </div>
   </div>
@@ -12,38 +12,47 @@
         <div class="form-group">
           <label for="firstname">First Name</label>
           <input type="text" class="form-control" id="firstname"
-            name="firstname" [(ngModel)]="data[0].firstname">
+            name="firstname" [(ngModel)]="data.firstname">
         </div>
         <div class="form-group">
           <label for="lastname">Last Name</label>
           <input type="text" class="form-control" id="lastname" name="lastname"
-            [(ngModel)]="data[0].lastname">
+            [(ngModel)]="data.lastname">
         </div>
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" class="form-control" id="email" name="email"
-            [(ngModel)]="data[0].email">
+            [(ngModel)]="data.email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="text" class="form-control" id="password" name="password"
+            [(ngModel)]="data.password">
+        </div>
+        <div class="form-group">
+          <label for="password">Password again</label>
+          <input type="text" class="form-control" id="passwordagain"
+            name="password">
         </div>
         <div class="form-group">
           <label for="age">Age</label>
           <input type="number" class="form-control" id="age" name="age"
-            [(ngModel)]="data[0].age">
+            [(ngModel)]="data.age">
         </div>
         <div class="form-group">
           <label for="country">Country</label>
           <input type="text" class="form-control" id="country" name="country"
-            [(ngModel)]="data[0].country">
+            [(ngModel)]="data.country">
         </div>
         <div class="form-group">
           <label for="city">City</label>
           <input type="text" class="form-control" id="city" name="city"
-            [(ngModel)]="data[0].city">
+            [(ngModel)]="data.city">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <button type="button" class="btn btn-warning"
-          routerLink="/mypage/profil/{{data[0].id}}">Back</button>
+          routerLink="/mypage/profil/{{data.id}}">Back</button>
       </form>
     </div>
   </div>
 </div>
-

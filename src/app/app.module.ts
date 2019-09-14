@@ -13,6 +13,7 @@ import { DetailsComponent } from './pages/details/details.component';
 import { MypageComponent } from './pages/mypage/mypage.component';
 import { ProfilComponent } from './pages/profil/profil.component';
 import { EditprofilComponent } from './pages/editprofil/editprofil.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
 
 const appRoutes: Routes = [
   {
@@ -37,6 +38,10 @@ const appRoutes: Routes = [
     component: EditprofilComponent,
   },
   {
+    path: 'mypage/registration',
+    component: RegistrationComponent,
+  },
+  {
     path: '**',
     component: IndexComponent,
   }
@@ -50,7 +55,8 @@ const appRoutes: Routes = [
     DetailsComponent,
     MypageComponent,
     ProfilComponent,
-    EditprofilComponent
+    EditprofilComponent,
+    RegistrationComponent
   ],
   imports: [
     FormsModule,

@@ -13,11 +13,15 @@ export class MountainsService {
 
   getAll(): Observable<Data[]> {
     return this.http.get<Data[]>(this.dataURL)
-  }
+  };
   getOneUser(id: number): Observable<User> {
     return this.http.get<User>(`${this.dataURL}/${id}`)
-  }
+  };
   editUser(user: User): Observable<User> {
     return this.http.post<User>(`${this.dataURL}/${user.id}`, user)
+  };
+  newUser(newuser: User): Observable<User> {
+    return this.http.post<User>(`${this.dataURL}/new`, newuser)
   }
+
 }
