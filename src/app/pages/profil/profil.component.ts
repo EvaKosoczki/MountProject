@@ -17,7 +17,7 @@ export class ProfilComponent implements OnInit {
     this.ar.params.forEach(
       params => {
         this.id = params.id
-        this.MountainsService.getOneUser(this.id).subscribe(
+        this.MountainsService.getOne(this.id).subscribe(
           data => this.oneData = data
         )
       }

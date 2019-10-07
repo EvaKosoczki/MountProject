@@ -16,7 +16,7 @@ export class RegistrationComponent implements OnInit {
   }
   onSubmit(ev: Event) {
     ev.preventDefault();
-    this.MountainsService.newUser(this.data).subscribe(
+    this.MountainsService.addOne(this.data).subscribe(
       result => console.log("Sikeres"),
       err => console.error(err)
     )

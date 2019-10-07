@@ -19,7 +19,7 @@ export class EditprofilComponent implements OnInit {
     private router: Router) {
     this.ar.params.forEach(params => {
       this.id = params.id
-      this.MountainsService.getOneUser(this.id).subscribe(
+      this.MountainsService.getOne(this.id).subscribe(
         data => this.data = data
       )
     }
@@ -29,7 +29,7 @@ export class EditprofilComponent implements OnInit {
   }
   onSubmit(ev: Event) {
     ev.preventDefault();
-    this.MountainsService.editUser(this.data[0]).subscribe(
+    this.MountainsService.editOne(this.data[0]).subscribe(
       response => {
         console.log("Sikeres");
         this.router.navigateByUrl(`/mypage/profil/${this.id}`)
