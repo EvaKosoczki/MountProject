@@ -19,5 +19,10 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  //Behavior subject-et itt használni !!!
+  onClick(id: number) {
+    this.UserService.deleteOne(id).subscribe(
+      response => console.log('sikeres')
+    )
+  }
 }

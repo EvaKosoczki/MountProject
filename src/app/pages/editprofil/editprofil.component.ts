@@ -36,7 +36,7 @@ export class EditprofilComponent implements OnInit {
     this.userService.editOne(this.data[0]).subscribe(
       response => {
         console.log("Sikeres");
-        this.router.navigateByUrl(`/mypage/profil/${this.id}`)
+        this.router.navigateByUrl(`/mypage/profil`)
 
       },
       err => {

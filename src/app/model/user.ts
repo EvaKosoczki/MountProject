@@ -6,4 +6,5 @@ export class User {
   age: number = 0;
   country: string = '';
   city: string = '';
+  passw:string='';
 }

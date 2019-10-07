@@ -33,5 +33,8 @@ export class BaseService {
     let url: string = this.getUrl();
     return this.http.post(`${url}/new`, data)
   }
-
+  deleteOne(id): Observable<any> {
+    let url: string = this.getUrl();
+    return this.http.delete(`${url}/${id}`)
+  }
 }
