@@ -32,11 +32,11 @@ const appRoutes: Routes = [
     component: MypageComponent,
   },
   {
-    path: 'mypage/profil/:id',
+    path: 'mypage/profil',
     component: ProfilComponent,
   },
   {
-    path: 'mypage/profil/:id/edit',
+    path: 'mypage/profil/:id',
     component: EditprofilComponent,
   },
   {

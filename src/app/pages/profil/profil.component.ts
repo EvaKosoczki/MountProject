@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MountainsService } from 'src/app/service/mountains.service';
 import { User } from 'src/app/model/user';
+import { UsersService } from './../../service/users.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-profil',
@@ -10,19 +11,10 @@ import { User } from 'src/app/model/user';
 })
 export class ProfilComponent implements OnInit {
   id: number = 0;
-  oneData: User =new User()
+  allUsers$: Observable<any> = this.UserService.getAll();
 
-  constructor(private MountainsService: MountainsService,
+  constructor(private UserService: UsersService,
     private ar: ActivatedRoute) {
-    this.ar.params.forEach(
-      params => {
-        this.id = params.id
-        this.MountainsService.getOne(this.id).subscribe(
-          data => this.oneData = data
-        )
-      }
-    )
-
   }
 
   ngOnInit() {
