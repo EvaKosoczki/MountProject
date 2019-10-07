@@ -13,9 +13,9 @@ import { DetailsComponent } from './pages/details/details.component';
 import { MypageComponent } from './pages/mypage/mypage.component';
 import { ProfilComponent } from './pages/profil/profil.component';
 import { EditprofilComponent } from './pages/editprofil/editprofil.component';
-import { RegistrationComponent } from './pages/registration/registration.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { Sorter7Pipe } from './pipe/sorter7.pipe';
+import { NewProfileComponent } from './pages/new-profile/new-profile.component';
 
 const appRoutes: Routes = [
   {
@@ -40,8 +40,8 @@ const appRoutes: Routes = [
     component: EditprofilComponent,
   },
   {
-    path: 'mypage/registration',
-    component: RegistrationComponent,
+    path: 'mypage/new',
+    component: NewProfileComponent,
   },
   {
     path: '**',
@@ -58,9 +58,9 @@ const appRoutes: Routes = [
     MypageComponent,
     ProfilComponent,
     EditprofilComponent,
-    RegistrationComponent,
     FilterPipe,
-    Sorter7Pipe
+    Sorter7Pipe,
+    NewProfileComponent
   ],
   imports: [
     FormsModule,
