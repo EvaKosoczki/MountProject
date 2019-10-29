@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'src/app/service/users.service';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-new-profile',
@@ -7,13 +8,13 @@ import { UsersService } from 'src/app/service/users.service';
   styleUrls: ['./new-profile.component.css']
 })
 export class NewProfileComponent implements OnInit {
-
-  constructor(private userService:UsersService) { }
+  data: User = new User();
+  constructor(private userService: UsersService) { }
 
   ngOnInit() {
   }
   onSubmit(ev: Event) {
     ev.preventDefault;
-    this.userService.addOne()
+    this.userService.addOne(this.data)
   }
 }
